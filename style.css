@@ -1,0 +1,78 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family:sans-serif;
+}
+
+.background{
+    background: #EDF1F7;
+    padding:1%;
+    
+}
+.text{
+    font-weight: bold;
+ 
+}
+.border{
+ /*   box-shadow: 2px 2px 2px black;*/
+    border-radius: 10%;
+}
+
+.clear{
+    clear:both;
+}
+
+.container{
+    padding:5px;
+    margin-top: 5px;
+}
+
+
+.draggable{
+    padding:5px;
+    cursor: move;
+}
+
+.draggable.dragging{
+    opacity: .5;
+}
+
+
+.windoow1{
+    border: 1px solid #999;
+}
+
+.menu{
+    width: 4.5rem;
+    height: 3rem;
+    background-color: #f4f4f4;
+    color: #333;
+    border: 1px solid #aaa;
+    box-shadow: 2px 2px 2px #999;
+    border-radius: 0.2rem;
+    list-style: none;
+    position: absolute;
+    z-index: 5;
+
+}
+.menu.hide-menu{
+    top: -200%;
+    left: -200%;
+}
+.menu-item{
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-weight: 100;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.menu-item:active{
+    color: #000;
+    font-weight: 500;
+}
+
+

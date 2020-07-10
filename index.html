@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html lang="he">
+<head>
+    <title>
+
+    </title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js" ></script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js">
+</script>
+
+<script>
+    Highcharts.setOptions({
+        chart: {
+            backgroundColor: 
+                'rgba(255,255,255)'
+            
+            },
+        });
+  
+</script>
+</head>
+
+<body style="width: 100%; margin:0" >
+    
+    
+        <ul class="menu">
+        <li class="menu-item" id="del">delete</li>
+        <li class="menu-item" id="flow">reflow</li>
+        </ul>
+ 
+<div class="background" class="text" >
+ 
+<div id="containerOfFourSmallContainers" style="width: 100%; height: 300px" class="text container ">
+
+    <div id="mostLeftDiv" style="width: 25%; height: 100%; float:left; resize:both; overflow:auto;" class="border draggable window1" draggable="true"> 
+      
+        <script>
+        var chart = Highcharts.chart('mostLeftDiv', {
+        chart: {
+        type: 'area',
+       
+        },
+        credits:{
+            text:'מתפ"ש',
+            style:{
+                fontSize:"11px",
+            color:"black",
+            fontFamily:"Arial",
+        },
+        },
+        title: {
+        text: 'בדיקות שהתבצעו אתמול',
+        style:{
+            color:'black'         
+        }
+
+        },
+        xAxis: {
+        categories: ['מורים', 'אנשי ניקיון', 'הנהלה', 'תלמידים', 'הורים מבקרים'],
+        labels:{
+            style:{
+                color:'black'
+            }
+        }
+    },
+        yAxis:{
+            labels:{
+                style:{
+                    color:'black'
+                }
+            },
+        },
+     
+        series: [{
+        name: 'יפית',
+        data: [5, 3, 4, 7, 2]
+        }, {
+        name: 'הדר',
+        data: [2, -2, -3, 2, 1]
+        }, {
+        name: 'רביד',
+        data: [3, 4, 4, -2, 5]
+        }]
+        });
+
+        
+        </script>
+    
+    </div>
+
+    <div id="leftContainer" style="height: 300px; width: 25%; float:left" class="text border draggable window1" draggable="true">
+        <script>
+            Highcharts.chart('leftContainer', {
+                chart: {
+                    type: 'area'
+                },
+                credits:{
+                    enabled:false,
+                },
+                title: {
+                    text: 'החלימו עד כה',
+                    style:{
+                        color:'black'            
+                    }
+                },
+                subtitle: {
+                    text: 'Source: Wikipedia.org'
+                },
+                xAxis: {
+                    categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
+                    labels:{
+                        style:{
+                            color:'black'
+                        }
+                    },
+                    tickmarkPlacement: 'on',
+                    title: {
+                        enabled: false
+                    }
+                },
+                yAxis: {
+                    title: {
+                        style:{
+                            color:'black'            
+                        },
+                        text: 'Billions'
+                    },
+                    labels: {
+                        formatter: function () {
+                            return this.value / 1000;
+                        }
+                    }
+                },
+                tooltip: {
+                    split: true,
+                    valueSuffix: ' millions'
+                },
+                plotOptions: {
+                    area: {
+                        stacking: 'normal',
+                        lineColor: '#666666',
+                        lineWidth: 1,
+                        marker: {
+                            lineWidth: 1,
+                            lineColor: '#666666'
+                        }
+                    }
+                },
+                series: [{
+                    name: 'אקדמית ת״א יפו',
+                    data: [502, 635, 809, 947, 1402, 3634, 5268]
+                }, {
+                    name: 'אפקה',
+                    data: [106, 107, 111, 133, 221, 767, 1766]
+                }, {
+                    name: 'אוניברסיטת ת״א',
+                    data: [163, 203, 276, 408, 547, 729, 628]
+                }, {
+                    name: 'הטכניון',
+                    data: [18, 31, 54, 156, 339, 818, 1201]
+                }, {
+                    name: 'hit',
+                    data: [2, 2, 2, 6, 13, 30, 46]
+                }]
+            });
+        </script>
+    </div>
+
+    
+    <div id="rightContainer" style="width: 25%; height: 100%; float:left" class="text border draggable window1" draggable="true">
+        <script>
+            Highcharts.chart('rightContainer', {
+                chart: {
+                    type: 'area'
+                },
+                credits:{
+                    enabled:false,
+                },
+                accessibility: {
+                    description: ''
+                },
+                title: {
+                    style:{
+                        color:'black'            
+                    },
+                    text: 'נפטרים מצטבר'
+                },
+                subtitle: {
+                    text: 'Sources: <a href="https://thebulletin.org/2006/july/global-nuclear-stockpiles-1945-2006">' +
+                        'thebulletin.org</a> &amp; <a href="https://www.armscontrol.org/factsheets/Nuclearweaponswhohaswhat">' +
+                        'armscontrol.org</a>'
+                },
+                xAxis: {
+                    allowDecimals: false,
+                    labels: {
+                        formatter: function () {
+                            return this.value; // clean, unformatted number for year
+                        }
+                    },
+                    accessibility: {
+                        rangeDescription: 'מגמת שינוי'
+                    }
+                },
+                yAxis: {
+                    title: {
+                        style:{
+                            color:'black'            
+                        },
+                        text: 'Nuclear weapon states'
+                    },
+                    labels: {
+                        formatter: function () {
+                            return this.value / 1000 + 'k';
+                        }
+                    }
+                },
+                tooltip: {
+                    pointFormat: '{series.name} had stockpiled <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
+                },
+                plotOptions: {
+                    area: {
+                        pointStart: 1940,
+                        marker: {
+                            enabled: false,
+                            symbol: 'circle',
+                            radius: 2,
+                            states: {
+                                hover: {
+                                    enabled: true
+                                }
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    name: 'USA',
+                    data: [
+                        null, null, null, null, null, 6, 11, 32, 110, 235,
+                        369, 640, 1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468,
+                        20434, 24126, 27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342,
+                        26662, 26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
+                        24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586, 22380,
+                        21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950, 10871, 10824,
+                        10577, 10527, 10475, 10421, 10358, 10295, 10104, 9914, 9620, 9326,
+                        5113, 5113, 4954, 4804, 4761, 4717, 4368, 4018
+                    ]
+                }, {
+                    name: 'USSR/Russia',
+                    data: [null, null, null, null, null, null, null, null, null, null,
+                        5, 25, 50, 120, 150, 200, 426, 660, 869, 1060,
+                        1605, 2471, 3322, 4238, 5221, 6129, 7089, 8339, 9399, 10538,
+                        11643, 13092, 14478, 15915, 17385, 19055, 21205, 23044, 25393, 27935,
+                        30062, 32049, 33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000,
+                        37000, 35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
+                        21000, 20000, 19000, 18000, 18000, 17000, 16000, 15537, 14162, 12787,
+                        12600, 11400, 5500, 4512, 4502, 4502, 4500, 4500
+                    ]
+                }]
+            });
+        </script>
+    </div>
+</div>
+
+<div class="clear"></div>
+<hr>
+<div class="container">
+    <div id="mostRightContainer" style="width: 25%; height: 100%; float:left" class="text border draggable window1" draggable="true">
+        <script>
+            Highcharts.chart('mostRightContainer', {
+                chart:{
+                },
+                credits:{
+                    enabled:false,
+                },
+                title: {
+                    style:{
+                        color:'black'            
+                    },
+                    text: 'מונשמים (מתוך קשה)'
+                },
+
+                xAxis: {
+                    tickInterval: 1,
+                    type: 'logarithmic',
+                    accessibility: {
+                        rangeDescription: 'Range: 1 to 10'
+                    }
+                },
+
+                yAxis: {
+                    type: 'logarithmic',
+                    minorTickInterval: 0.1,
+                    accessibility: {
+                        rangeDescription: 'Range: 0.1 to 1000'
+                    }
+                },
+
+                tooltip: {
+                    headerFormat: '<b>{series.name}</b><br />',
+                    pointFormat: 'x = {point.x}, y = {point.y}'
+                },
+
+                series: [{
+                    data: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512],
+                    pointStart: 1
+                }]
+            });
+        </script>
+    </div>
+
+
+
+<div id="contain" style="width: 25%; height: 100%; float:left" class="text border draggable window1" draggable="true">
+<script type="text/javascript">
+    Highcharts.chart('contain', {
+
+        chart: {
+            type: 'line'
+        },
+        credits:{
+            enabled:false,
+        },
+        title: {
+            style:{
+                color:'black'            
+            },
+            text: 'מדד מחזור העסקים באיו"ש וברצ"ע',
+        },
+        subtitle: {
+            text: 'מדד מחזור העסקים החודשי, מרץ 2018 עד מרץ 2020',
+
+        },
+        xAxis: {
+
+            categories: ['מרץ','אפריל', 'מאי','יוני','יולי','אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר', 'ינואר','פברואר', 'מרץ', 'אפריל', 'יוני', 'יולי'],
+            labels:{
+                style:{
+                    color:'black'
+                }
+            },
+            useHTML: Highcharts.hasBidiBug
+
+        },
+        yAxis: {
+            title: {
+                style:{
+                    color:'black'            
+                },
+                text: 'Temperature (°C)'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: true
+            }
+        },
+        series: [{
+            name: 'רצ״ע',
+            useHTML: Highcharts.hasBidiBug,
+            data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        }, {
+            useHTML: Highcharts.hasBidiBug,
+            name: 'איו״ש',
+            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+        }]
+    });
+</script>
+</div>
+<div id="epidemicDiam" style="width: 25%; height: 100%; float:left" class="text border draggable window1" draggable="true">
+
+<script>
+    Highcharts.chart('epidemicDiam', {
+        chart: {
+            type: 'column'
+        },
+        credits:{
+            enabled:false,
+        },
+        title: {
+            style:{
+                color:'black'            
+            },
+            text: 'עקומה אפידמית'
+        },
+        subtitle: {
+            text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+        },
+        xAxis: {
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif',
+                    color:'black',
+                }
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                style:{
+                    color:'black'            
+                },
+                text: 'Population (millions)'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: 'Population in 2017: <b>{point.y:.1f} millions</b>'
+        },
+        series: [{
+            name: 'Population',
+            data: [
+                ['Shanghai', 24.2],
+                ['Beijing', 20.8],
+                ['Karachi', 14.9],
+                ['Shenzhen', 13.7],
+                ['Guangzhou', 13.1],
+                ['Istanbul', 12.7],
+                ['Mumbai', 12.4],
+                ['Moscow', 12.2],
+                ['São Paulo', 12.0],
+                ['Delhi', 11.7],
+                ['Kinshasa', 11.5],
+                ['Tianjin', 11.2],
+                ['Lahore', 11.1],
+                ['Jakarta', 10.6],
+                ['Dongguan', 10.6],
+                ['Lagos', 10.6],
+                ['Bengaluru', 10.3],
+                ['Seoul', 9.8],
+                ['Foshan', 9.3],
+                ['Tokyo', 9.3]
+            ],
+            dataLabels: {
+                enabled: true,
+                rotation: -90,
+                color: '#FFFFFF',
+                align: 'right',
+                format: '{point.y:.1f}', // one decimal
+                y: 10, // 10 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+    </script>
+</div>
+</div>
+<div class="clear"></div>
+
+<hr>
+<div class="container ">
+    <div id="leftDiv" style="width: 33%; height: 100%; float: left" class="text border draggable window1" draggable="true">
+    <script>
+
+        // Age categories
+        var categories = [
+            '0-4', '5-9', '10-14', '15-19',
+            '20-24', '25-29', '30-34', '35-39', '40-44',
+            '45-49', '50-54', '55-59', '60-64', '65-69',
+            '70-74', '75-79', '80-84', '85-89', '90-94',
+            '95-99', '100 + '
+        ];
+
+        Highcharts.chart('leftDiv', {
+            chart: {
+               
+                type: 'bar'
+            },
+            credits:{
+                enabled:false,
+            },
+            title: {
+                style:{
+                    color:'black'            
+                },
+                text: 'פיזוּר חולים גיל ומגדר'
+            },
+            subtitle: {
+                text: "<a> חלוּקת המגדר </a>"
+            },
+            accessibility: {
+                point: {
+                    valueDescriptionFormat: '{index}. Age {xDescription}, {value}%.'
+                }
+            },
+            xAxis: [{
+                categories: categories,
+                reversed: false,
+                labels: {
+                    step: 1
+                },
+                accessibility: {
+                    description: 'גברים'
+                }
+            }, { // mirror axis on right side
+                opposite: true,
+                reversed: false,
+                categories: categories,
+                linkedTo: 0,
+                labels: {
+                    step: 1
+                },
+                accessibility: {
+                    description: 'נשים'
+                }
+            }],
+            yAxis: {
+                title: {
+                    
+                    style:{
+                        color:'black'            
+                    },
+                    text: null
+                },
+                labels: {
+                    formatter: function () {
+                        return Math.abs(this.value) + '%';
+                    }
+                },
+                accessibility: {
+                    description: 'Percentage population',
+                    rangeDescription: 'Range: 0 to 5%'
+                }
+            },
+
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+                        'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 1) + '%';
+                }
+            },
+
+            series: [{
+                name: 'גברים',
+                data: [
+                    -2.2, -2.1, -2.2, -2.4,
+                    -2.7, -3.0, -3.3, -3.2,
+                    -2.9, -3.5, -4.4, -4.1,
+                    -3.4, -2.7, -2.3, -2.2,
+                    -1.6, -0.6, -0.3, -0.0,
+                    -0.0
+                ]
+            }, {
+                name: 'נשים',
+                data: [
+                    2.1, 2.0, 2.1, 2.3, 2.6,
+                    2.9, 3.2, 3.1, 2.9, 3.4,
+                    4.3, 4.0, 3.5, 2.9, 2.5,
+                    2.7, 2.2, 1.1, 0.6, 0.2,
+                    0.0
+                ]
+            }]
+        });
+
+
+    </script>
+    </div>
+    <div id="midDiv" style="width: 33%; height: 100%; float: left" class="text border draggable window1" draggable="true">
+        <script>
+            var ranges = [
+                    [1246406400000, 14.3, 27.7],
+                    [1246492800000, 14.5, 27.8],
+                    [1246579200000, 15.5, 29.6],
+                    [1246665600000, 16.7, 30.7],
+                    [1246752000000, 16.5, 25.0],
+                    [1246838400000, 17.8, 25.7],
+                    [1246924800000, 13.5, 24.8],
+                    [1247011200000, 10.5, 21.4],
+                    [1247097600000, 9.2, 23.8],
+                    [1247184000000, 11.6, 21.8],
+                    [1247270400000, 10.7, 23.7],
+                    [1247356800000, 11.0, 23.3],
+                    [1247443200000, 11.6, 23.7],
+                    [1247529600000, 11.8, 20.7],
+                    [1247616000000, 12.6, 22.4],
+                    [1247702400000, 13.6, 19.6],
+                    [1247788800000, 11.4, 22.6],
+                    [1247875200000, 13.2, 25.0],
+                    [1247961600000, 14.2, 21.6],
+                    [1248048000000, 13.1, 17.1],
+                    [1248134400000, 12.2, 15.5],
+                    [1248220800000, 12.0, 20.8],
+                    [1248307200000, 12.0, 17.1],
+                    [1248393600000, 12.7, 18.3],
+                    [1248480000000, 12.4, 19.4],
+                    [1248566400000, 12.6, 19.9],
+                    [1248652800000, 11.9, 20.2],
+                    [1248739200000, 11.0, 19.3],
+                    [1248825600000, 10.8, 17.8],
+                    [1248912000000, 11.8, 18.5],
+                    [1248998400000, 10.8, 16.1]
+                ],
+                averages = [
+                    [1246406400000, 21.5],
+                    [1246492800000, 22.1],
+                    [1246579200000, 23],
+                    [1246665600000, 23.8],
+                    [1246752000000, 21.4],
+                    [1246838400000, 21.3],
+                    [1246924800000, 18.3],
+                    [1247011200000, 15.4],
+                    [1247097600000, 16.4],
+                    [1247184000000, 17.7],
+                    [1247270400000, 17.5],
+                    [1247356800000, 17.6],
+                    [1247443200000, 17.7],
+                    [1247529600000, 16.8],
+                    [1247616000000, 17.7],
+                    [1247702400000, 16.3],
+                    [1247788800000, 17.8],
+                    [1247875200000, 18.1],
+                    [1247961600000, 17.2],
+                    [1248048000000, 14.4],
+                    [1248134400000, 13.7],
+                    [1248220800000, 15.7],
+                    [1248307200000, 14.6],
+                    [1248393600000, 15.3],
+                    [1248480000000, 15.3],
+                    [1248566400000, 15.8],
+                    [1248652800000, 15.2],
+                    [1248739200000, 14.8],
+                    [1248825600000, 14.4],
+                    [1248912000000, 15],
+                    [1248998400000, 13.6]
+                ];
+
+
+            Highcharts.chart('midDiv',
+                {
+                chart:{
+                },
+                credits:{
+                    enabled:false,
+                },
+                title: {
+                    style:{
+                        color:'black'            
+                    },
+                    text: 'קצב ההכפלה שׁל מאוּמתים'
+                },
+
+                xAxis: {
+                    type: 'datetime',
+                    accessibility: {
+                        rangeDescription: 'Range: Jul 1st 2009 to Jul 31st 2009.'
+                    }
+                },
+
+                yAxis: {
+                    title: {
+                        text: null
+                    }
+                },
+
+                tooltip: {
+                    crosshairs: true,
+                    shared: true,
+                    valueSuffix: '°C'
+                },
+
+                series: [{
+                    name: 'Temperature',
+                    data: averages,
+                    zIndex: 1,
+                    marker: {
+                        fillColor: 'white',
+                        lineWidth: 2,
+                        lineColor: Highcharts.getOptions().colors[0]
+                    }
+                }, {
+                    name: 'Range',
+                    data: ranges,
+                    type: 'arearange',
+                    lineWidth: 0,
+                    linkedTo: ':previous',
+                    color: Highcharts.getOptions().colors[0],
+                    fillOpacity: 0.3,
+                    zIndex: 0,
+                    marker: {
+                        enabled: false
+                    }
+                }]
+            });
+        </script>
+    </div>
+    
+    <div id="pieContainer" style="width: 25%; height: 100%; float: left" class="border draggable window1" draggable="true">
+        <script>
+            Highcharts.chart('pieContainer', {
+                chart: {
+                    type: 'variablepie'
+                },
+                credits:{
+                    enabled:false,
+                    
+                },
+                title: {
+                    style:{
+                        color:'black'            
+                    },
+                    text: 'Countries compared by population density and total area.'
+                },
+                tooltip: {
+                    headerFormat: '',
+                    pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+                        'Area (square km): <b>{point.y}</b><br/>' +
+                        'Population density (people per square km): <b>{point.z}</b><br/>'
+                },
+                series: [{
+                    minPointSize: 10,
+                    innerSize: '20%',
+                    zMin: 0,
+                    name: 'countries',
+                    data: [{
+                        name: 'Spain',
+                        y: 505370,
+                        z: 92.9
+                    }, {
+                        name: 'France',
+                        y: 551500,
+                        z: 118.7
+                    }, {
+                        name: 'Poland',
+                        y: 312685,
+                        z: 124.6
+                    }, {
+                        name: 'Czech Republic',
+                        y: 78867,
+                        z: 137.5
+                    }, {
+                        name: 'Italy',
+                        y: 301340,
+                        z: 201.8
+                    }, {
+                        name: 'Switzerland',
+                        y: 41277,
+                        z: 214.5
+                    }, {
+                        name: 'Germany',
+                        y: 357022,
+                        z: 235.6
+                    }]
+                }]
+            });
+
+
+        </script>
+        
+    </div>
+    </div>
+    <div class="clear"></div>
+   
+</div>
+</div>
+
+</body>
+</html>
